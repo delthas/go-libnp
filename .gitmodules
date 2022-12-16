@@ -1,0 +1,3 @@
+[submodule "libnp"]
+	path = libnp
+	url = https://github.com/delthas/libnp.git
