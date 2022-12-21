@@ -2,8 +2,11 @@
 
 package libnp
 
+// #cgo CFLAGS: -Ilibnp/include
 // #cgo LDFLAGS: -lruntimeobject
 // #include <np.h>
+// #include <libnp/np_windows.c>
+// #include <libnp/np_util.c>
 import "C"
 
 import (

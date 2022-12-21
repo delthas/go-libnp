@@ -1,5 +1,3 @@
-//go:generate cp ./libnp/include/np.h ./libnp/np_util.h ./libnp/np_util.c ./libnp/np_windows.c .
-
 // Package libnp offers information about the media that is currently being played.
 // The main entrypoint is GetInfo, which returns an Info.
 package libnp
