@@ -45,43 +45,59 @@ func getInfo(ctx context.Context) (*Info, error) {
 		var info Info
 		if e, ok := metadata["mpris:length"].Value().(int64); ok {
 			info.Length = time.Duration(e) * time.Microsecond
-		} else if e, ok := metadata["mpris:artUrl"].Value().(string); ok {
+		}
+		if e, ok := metadata["mpris:artUrl"].Value().(string); ok {
 			info.ArtURL = e
-		} else if e, ok := metadata["xesam:album"].Value().(string); ok {
+		}
+		if e, ok := metadata["xesam:album"].Value().(string); ok {
 			info.Album = e
-		} else if e, ok := metadata["xesam:albumArtist"].Value().([]string); ok && len(e) > 0 {
+		}
+		if e, ok := metadata["xesam:albumArtist"].Value().([]string); ok && len(e) > 0 {
 			info.AlbumArtists = e
-		} else if e, ok := metadata["xesam:artist"].Value().([]string); ok && len(e) > 0 {
+		}
+		if e, ok := metadata["xesam:artist"].Value().([]string); ok && len(e) > 0 {
 			info.Artists = e
-		} else if e, ok := metadata["xesam:audioBPM"].Value().(int); ok {
+		}
+		if e, ok := metadata["xesam:audioBPM"].Value().(int); ok {
 			info.BPM = e
-		} else if e, ok := metadata["xesam:composer"].Value().([]string); ok && len(e) > 0 {
+		}
+		if e, ok := metadata["xesam:composer"].Value().([]string); ok && len(e) > 0 {
 			info.Composers = e
-		} else if e, ok := metadata["xesam:contentCreated"].Value().(string); ok {
+		}
+		if e, ok := metadata["xesam:contentCreated"].Value().(string); ok {
 			if t, err := time.Parse(time.RFC3339, e); err == nil {
 				info.Created = t
 			}
-		} else if e, ok := metadata["xesam:discNumber"].Value().(int); ok {
+		}
+		if e, ok := metadata["xesam:discNumber"].Value().(int); ok {
 			info.DiscNumber = e
-		} else if e, ok := metadata["xesam:firstUsed"].Value().(string); ok {
+		}
+		if e, ok := metadata["xesam:firstUsed"].Value().(string); ok {
 			if t, err := time.Parse(time.RFC3339, e); err == nil {
 				info.FirstPlayed = t
 			}
-		} else if e, ok := metadata["xesam:genre"].Value().([]string); ok && len(e) > 0 {
+		}
+		if e, ok := metadata["xesam:genre"].Value().([]string); ok && len(e) > 0 {
 			info.Genres = e
-		} else if e, ok := metadata["xesam:lastUsed"].Value().(string); ok {
+		}
+		if e, ok := metadata["xesam:lastUsed"].Value().(string); ok {
 			if t, err := time.Parse(time.RFC3339, e); err == nil {
 				info.LastPlayed = t
 			}
-		} else if e, ok := metadata["xesam:lyricist"].Value().([]string); ok && len(e) > 0 {
+		}
+		if e, ok := metadata["xesam:lyricist"].Value().([]string); ok && len(e) > 0 {
 			info.Lyricists = e
-		} else if e, ok := metadata["xesam:title"].Value().(string); ok {
+		}
+		if e, ok := metadata["xesam:title"].Value().(string); ok {
 			info.Title = e
-		} else if e, ok := metadata["xesam:trackNumber"].Value().(int); ok {
+		}
+		if e, ok := metadata["xesam:trackNumber"].Value().(int); ok {
 			info.TrackNumber = e
-		} else if e, ok := metadata["xesam:url"].Value().(string); ok {
+		}
+		if e, ok := metadata["xesam:url"].Value().(string); ok {
 			info.URL = e
-		} else if e, ok := metadata["xesam:useCount"].Value().(int); ok {
+		}
+		if e, ok := metadata["xesam:useCount"].Value().(int); ok {
 			info.PlayCount = e
 		}
 		r = &info
