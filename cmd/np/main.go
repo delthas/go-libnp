@@ -3,9 +3,10 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/delthas/go-libnp"
 	"log"
 	"time"
+
+	"github.com/delthas/go-libnp"
 )
 
 func main() {

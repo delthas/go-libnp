@@ -1,4 +1,4 @@
-//go:build !linux && !(windows && cgo)
+//go:build !linux && !windows
 
 package libnp
 
